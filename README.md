@@ -2,11 +2,11 @@
 
 A machine learning project that leverages clinical data to predict the presence of heart disease using ensemble learning and logistic regression techniques.
 
-## 🎯 Project Overview
+## Project Overview
 
 Cardiovascular diseases (CVDs) are the leading cause of global mortality, claiming 17.9 million lives annually. This project bridges the gap between static clinical data and dynamic patient care by developing a predictive model that can identify high-risk individuals before a major cardiac event occurs. The model serves as the backend for a full-stack application designed to provide accessible, non-invasive screening tools for heart health assessment.
 
-## 📊 Dataset
+## Dataset
 
 The project uses the **Heart Failure Prediction Dataset**, which consolidates five independent heart disease datasets from the UCI Machine Learning Repository, creating a comprehensive collection of **918 observations** with **11 clinical features**.
 
@@ -27,7 +27,7 @@ The project uses the **Heart Failure Prediction Dataset**, which consolidates fi
 | **ST_Slope** | Up: Upsloping, Flat: Flat, Down: Downsloping | Categorical |
 | **HeartDisease** | Target variable (1: Heart disease, 0: Normal) | Binary |
 
-## 🔧 Data Preprocessing
+## Data Preprocessing
 
 ### 1. Missing Value Handling
 - Replaced 0 values in `RestingBP` (1 instance) with median
@@ -44,15 +44,15 @@ Key findings from Pearson correlation matrix:
 - **ST_Slope_Up** (-0.6): Strong negative correlation (healthy indicator)
 - **MaxHR** (-0.4): Lower max heart rate linked to disease
 
-## 🤖 Models
+## Models
 
 ### Logistic Regression
 Uses Maximum Likelihood Estimation (MLE) to establish a decision boundary through a sigmoid function, outputting probabilities between 0 and 1.
 
-### Random Forest Classifier ⭐ (Selected Model)
+### Random Forest Classifier (Selected Model)
 An ensemble learning method using Bootstrap Aggregating (Bagging) with `max_depth=5`. Constructs multiple decision trees and outputs the majority vote, capturing non-linear interactions between features.
 
-## 📈 Model Performance
+## Model Performance
 
 ### Logistic Regression Results
 - **Accuracy**: 86.4%
@@ -62,7 +62,7 @@ An ensemble learning method using Bootstrap Aggregating (Bagging) with `max_dept
 - **F2-Score**: 86.2%
 - **AUC**: 0.929
 
-### Random Forest Results (Winner) 🏆
+### Random Forest Results (Winner)
 - **Accuracy**: 88.0%
 - **Balanced Accuracy**: 87.8%
 - **Precision**: 89.4%
@@ -77,7 +77,7 @@ The Random Forest model was selected for deployment due to:
 - **Non-linear relationships**: Captures complex feature interactions
 - **Clinical reliability**: Better handles class imbalances
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 Heart Disease Detection Model/
@@ -87,7 +87,7 @@ Heart Disease Detection Model/
 ├── README.md                             # Project documentation
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Requirements
 ```python
@@ -110,14 +110,14 @@ model = joblib.load('model.joblib')
 prediction = model.predict(processed_features)
 ```
 
-## 🎯 Key Insights
+## Key Insights
 
 1. **ST_Slope_Flat** is the strongest predictor of heart disease (correlation: 0.6)
 2. **Exercise-induced angina** significantly correlates with heart disease presence
 3. **Lower maximum heart rate** during stress testing indicates cardiovascular impairment
 4. Random Forest outperforms Logistic Regression in all metrics, particularly in minimizing false negatives—critical for medical diagnostics
 
-## 📚 References
+## References
 
 fedesoriano. (September 2021). Heart Failure Prediction Dataset. Retrieved March 2026 from https://www.kaggle.com/fedesoriano/heart-failure-prediction
 
